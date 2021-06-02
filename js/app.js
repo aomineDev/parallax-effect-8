@@ -8,12 +8,12 @@ const header = document.querySelector("header");
 
 window.addEventListener("scroll", function () {
   const value = window.scrollY;
-  stars.style.left = value * 0.25 + "px";
-  moon.style.top = value * 1.05 + "px";
-  mountains_behind.style.top = value * 0.5 + "px";
-  mountains_front.style.top = value * 0 + "px";
-  text.style.marginRight = value * 4 + "px";
-  text.style.marginTop = value * 1.5 + "px";
-  btn.style.marginTop = value * 1.5 + "px";
-  header.style.top = value * 0.5 + "px";
+  stars.style.transform = `translateY(${value * 0.25}px)`;
+  moon.style.transform = `translateY(${value * 1.05}px)`;
+  mountains_behind.style.transform = `translateY(${value * 0.5}px)`;
+  text.style.transform = `translateX(${value * -4}px) translateY(${
+    value * 0.5
+  }px)`;
+  btn.style.transform = `translateY(${value * 1.5}px)`;
+  header.style.transform = `translateY(${value * 0.5}px)`;
 });
